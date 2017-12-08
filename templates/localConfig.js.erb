@@ -1,6 +1,8 @@
 {
-  port: "<%= @port %>"
-, address: "<%= @address %>"
+  servers: [
+    { server: "./servers/tcp", address: "<%= @address %>", port: <%= @port %> },
+    { server: "./servers/udp", address: "<%= @address %>", port: <%= @port %> },
+  ]
 , backends: [<%= @backends.map {|b| b.to_json }.join(',') %>]
 , debug: <%= @debug %>
 , keyNameSanitize: <%= @keyNameSanitize %>
